@@ -1,7 +1,9 @@
 package com.sky.dto;
 
+import io.swagger.models.auth.In;
 import lombok.Data;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Data
@@ -11,9 +13,11 @@ public class EmployeePageQueryDTO implements Serializable {
     private String name;
 
     //页码
-    private int page;
+    @NotNull(message = "page不能为空")
+    private Integer page;
 
     //每页显示记录数
-    private int pageSize;
+    @NotNull(message = "pageSize不能为空")
+    private Integer pageSize;
 
 }
